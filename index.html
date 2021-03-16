@@ -1,0 +1,199 @@
+<!doctype html>
+<html lang="en-US">
+<head>
+
+	<meta charset="utf-8">
+	<meta http-equiv="X-UA-Compatible" content="IE=edge">
+	<meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+    <title>OAKEY</title>
+
+	<link rel="icon" type="image/jpg" href="images/logo.svg">
+	<link href="css/bootstrap.css" rel="stylesheet" type="text/css">
+	<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.6.1/css/font-awesome.min.css">
+	<link href="fonts/site-fonts/fontstyle.css" rel="stylesheet" type="text/css">
+	<link href="css/style.css" rel="stylesheet" type="text/css">
+
+    <link rel="preconnect" href="https://fonts.gstatic.com">
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;600;800&display=swap" rel="stylesheet">
+
+	<!-- HTML5 Shim and Respond.js IE8 support of HTML5 elements and media queries -->
+	<!-- WARNING: Respond.js doesn't work if you view the page via file://-->
+  	<!--[if lt IE 9]>
+  	<script src="https://oss.maxcdn.com/html5shiv/3.7.2/html5shiv.min.js"></script>
+  	<script src="https://oss.maxcdn.com/respond/1.4.2/respond.min.js"></script>
+  	<![endif]-->
+
+</head>
+
+  <body data-spy="scroll" data-target="#spy">
+   <div class="home_page_wrapper">
+	<header></header>
+ 
+	    <section>
+		      <div class="five_bg_pillar_main_con">
+				 <a href="index.html" class="logo"></a>
+		         <div class="five_bg_pillar1"></div>
+		         <div class="five_bg_pillar2"></div>
+		         <div class="five_bg_pillar3"></div>
+		         <div class="five_bg_pillar4"></div>
+		         <div class="five_bg_pillar5"></div>
+				 <div class="oakey_style"></div>
+	   		  <div class="hero_img_fade_con text-center">
+                 <div class="hero_img_fade slider">
+                    <div class="menu_img_con1 hero_immersive_con">
+						<h2>THINK</h2>
+					    <h4>Content studio with a passion for<br>building disruptive experiences.</h4>
+					 </div>
+                    <div class="menu_img_con1 hero_immersive_con">
+						<h2>CREATE</h2>
+					    <h4>Content studio with a passion for<br>building disruptive experiences.</h4>
+					 </div>
+                    <div class="menu_img_con1 hero_immersive_con">
+						<h2>SHARE</h2>
+					    <h4>Content studio with a passion for<br>building disruptive experiences.</h4>
+					 </div>
+                 </div>
+              </div>
+             <div class="contact_animation_btn_main_con"> 
+			     <div class="contact_animation_white_con"></div> 
+                 <div class="contact_animation_btn_con">
+	                 <a href="#!"><button class="hover-button">CONTACT</button></a>
+                 </div>
+			 </div>	
+			 <div class="portfolio_animation_btn_main_con">
+			     <div class="portfolio_animation_white_con"></div>
+                 <div class="portfolio_animation_btn_con">
+	                 <a href="portfolio.html"><button class="hover-button">PORTFOLIO</button></a>
+                 </div>
+			 </div>   
+		   </div> 
+	   </section>   
+	    
+	   <footer>
+          <div class="container footer_main_con">
+			  <div class="col-lg-6 col-md-6 col-sm-6 col-xs-12"> 
+                <ul>
+                  <li><a href="#!"><img src="images/linkedin-1.svg"></a></li> 
+                  <li><a href="#!"><img src="images/mail.svg"></a></li> 
+                  <li><a href="#!"><img src="images/messenger-2.svg"></a></li> 
+                </ul>  
+              </div> 
+		      <div class="col-lg-6 col-md-6 col-sm-6 col-xs-12"> 
+                <h5>© 2020-2021 OAKEY AGENCY</h5>  
+              </div> 
+         </div>
+       </footer>
+
+    </div>
+
+
+	      <script src="js/jquery-1.11.1.min.js"></script>
+	      <script src="js/bootstrap.min.js"></script>
+          <script src="js/slick.min.js"></script>
+
+
+	      <script type="text/javascript">
+			  /*MOBILE VIEW MENU NAVBAR*/
+
+		          $(document).ready(function(){
+			          $(function() {
+				          var header = $(".main_menubar");
+				          $(window).scroll(function() {
+					          var scroll = $(window).scrollTop();
+					          if (scroll >= 1) {
+						          header.addClass("active");
+					          } else {
+						          header.removeClass("active");
+					          }
+				          });
+			          });
+			          $('body').scrollspy({ target: '#spy', offset:80});
+
+			          $('.down_link').click(function(e){
+				          e.preventDefault();
+				          var anchor = $(this);
+				          $('html, body').stop().animate({
+					          scrollTop: $(anchor.attr('href')).offset().top-60
+				          }, 600);
+			          });
+			          $('.push_link .close_push').click(function(e){
+				          e.preventDefault();
+				          $('.push_install').slideUp(0);
+				          $('.head_contents').addClass('push_none');
+			          });
+			          $('.view_full').click(function(e){
+				          e.preventDefault();
+				          $('body').parent().addClass('active_web');
+			          });
+			          $(".proj-menu-toggle").click(function() {
+				          $('.proj-menu-collapsed').toggleClass("proj-menu-expanded");
+			          });
+			          $('.mobile_menu li a[href*=#]:not([href=#])').click(function(e){
+				          e.preventDefault();
+				          $('.proj-menu-collapsed').removeClass("proj-menu-expanded");
+				          $('.mobile_menu li').removeClass('active');
+				          $(this).parent().addClass('active');
+				          var var_href = $(this).attr('href');
+				          var anchor = $(this);
+
+			          });
+			          $('.tab_heads li a.last').click(function(e){
+				          e.preventDefault();
+				          $('.tab_heads li a.first').trigger('click');
+			          });
+			          $('.tab_heads li a.comm').click(function(e){
+				          e.preventDefault();
+				          $('.tab_heads li, .tab_content_in').removeClass('active');
+				          $(this).parent().addClass('active');
+				          var var_href = $(this).attr('href');
+				          var var_link = $(this).data('link');
+				          $(var_link).addClass('active');
+				          var anchor = $(this);
+				          $('html, body').stop().animate({
+					          scrollTop: $(anchor.attr('href')).offset().top-60
+				          }, 600);
+			          });
+		          });
+	         </script>
+
+
+             <script>
+               /*LANDING BODY PAGES SLIDE*/
+
+                 $(function() {
+                  $('a[href*=#]').on('click', function(e) {
+                    e.preventDefault();
+                    $('html, body').animate({ scrollTop: $($(this).attr('href')).offset().top}, 600, 'linear');
+                  });
+                });
+             </script>
+	  
+	  
+	         <script>
+              /*MIDDLE TEXT SLIDER*/ 
+ 
+                   $(document).ready(function(){
+                    $('.hero_img_fade').slick({
+                        fade: true,
+                        autoplay:true,
+				        infinite: true,
+                        arrows: false, 
+                        autoplaySpeed:300,
+				        cssEase: 'ease-in-out',
+				        speed:0,
+                        dots: false,  
+                    });
+                 });
+				 
+                 $('.hero_img_fade').mouseover(function() {
+                     $(this).slick('play')
+                 });
+                 $('.hero_img_fade').mouseout(function() {
+                     $(this).slick('play')
+                 }); 
+
+	         </script>
+	  
+
+   </body>
+</html>
