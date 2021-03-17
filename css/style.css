@@ -1368,29 +1368,29 @@ portfolio_page_wrapper five_bg_pillar1, portfolio_page_wrapper five_bg_pillar2, 
   margin-right: auto;
 }
 
-featured_products_item featured_products_item1_con, featured_products_item featured_products_item2_con, featured_products_item featured_products_item3_con, featured_products_item featured_products_item4_con {
-  height: 470px;
-}
 
-.portfolio_page_wrapper .featured_products_item iframe {
+
+.portfolio_page_wrapper .featured_products_item video {
   height: 370px;
-  background-color: #000000;
+  background-color: #000;
+  width: 100%;
+  object-fit: cover;
 }
 
 @media (max-height:650px) {
-  .portfolio_page_wrapper .featured_products_item iframe {
+  .portfolio_page_wrapper .featured_products_item video {
     height: 280px;
   }
 }
 
 @media (max-height:480px) {
-  .portfolio_page_wrapper .featured_products_item iframe {
+  .portfolio_page_wrapper .featured_products_item video {
     height: 250px;
   }
 }
 
 @media (max-height:399px) {
-  .portfolio_page_wrapper .featured_products_item iframe {
+  .portfolio_page_wrapper .featured_products_item video {
     height: 220px;
   }
 }
