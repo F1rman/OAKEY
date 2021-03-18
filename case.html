@@ -30,7 +30,7 @@
 	<div class="home_page_wrapper portfolio_page_wrapper">
 
 		<section class="head_line">
-				<!-- <a href="portfolio.html" class="back_portfolio "><img src="images/close1.svg">Back to portfolio</a>
+			<!-- <a href="portfolio.html" class="back_portfolio "><img src="images/close1.svg">Back to portfolio</a>
 			<a href="index.html" class="back_home back_portfolio">HOME<img src="images/home-icon.svg"></a> -->
 			<div class="portfolio_home_animation_btn_main_con home_btn">
 				<div class="portfolio_home_animation_btn_con ">
@@ -48,43 +48,81 @@
 		</section>
 
 		<section>
-		<div class="content">
-			<div class="row">
-				<div class="col">
-					<ul>
-						<li class="active"><div class="after"></div>Overview</li>
-						<li><div class="after"></div>Diverse video</li>
-						<li><div class="after"></div>Original Music</li>
-						<li><div class="after"></div>Innovative Website</li>
-					</ul>
-				</div>
-				<div class="col">
-					<div class="text">Working with the Georgia State University Football Team provided us with an opportunity to put
-our strength in video alongside our passion for sports. GSU is a dynamic school, and we wanted
-that dynamism to be showcased in the video materials we created. We developed an emotional
-appeal to the content which was made a reality through beautiful camera shots that captured
-the player’s work ethic as well as the aesthetic of the facilities.</div>
+			<div class="content">
+				<div class="row">
+					<div class="col">
+						<ul>
+							<li class="active">
+								<div class="after"></div>Overview
+							</li>
+							<li>
+								<div class="after"></div>Diverse video
+							</li>
+							<li>
+								<div class="after"></div>Original Music
+							</li>
+							<li>
+								<div class="after"></div>Innovative Website
+							</li>
+						</ul>
+					</div>
+					<div class="col">
+						<div class="text">Working with the Georgia State University Football Team provided us with an opportunity to put
+							our strength in video alongside our passion for sports. GSU is a dynamic school, and we wanted
+							that dynamism to be showcased in the video materials we created. We developed an emotional
+							appeal to the content which was made a reality through beautiful camera shots that captured
+							the player’s work ethic as well as the aesthetic of the facilities.</div>
+					</div>
 				</div>
 			</div>
-		</div>
 		</section>
-	<section>
-		<div class="media">
-			<h2>Media <div class="dot"></div></h2>
-			<div class="slider_media">
-				<div class="wrap_videos">
-					<div class="video_cont"><img src="images/rectangle1_s.png" alt=""></div>
-					<div class="video_cont"><img src="images/rectangle1_s.png" alt=""></div>
-					<div class="video_cont"><img src="images/rectangle1_s.png" alt=""></div>
-					<div class="video_cont"><img src="images/rectangle1_s.png" alt=""></div>
-					<div class="video_cont"><img src="images/rectangle1_s.png" alt=""></div>
-					<div class="video_cont"><img src="images/rectangle1_s.png" alt=""></div>
-					<div class="video_cont"><img src="images/rectangle1_s.png" alt=""></div>
-					<div class="video_cont"><img src="images/rectangle1_s.png" alt=""></div>
+		<section>
+			<div class="media">
+				<h2>Media <div class="dot"></div>
+				</h2>
+				<div class="slider_media">
+					<div class="btn_wrap">
+						<div class="prev btn_a"><img src="images/right1.svg" alt=""></div>
+						<div class="next btn_a"><img src="images/right1.svg" alt=""></div>
+					</div>
+
+					<div class="wrap_videos">
+						<div class="video_cont"><video controls muted loop  preload="" poster="images/rectangle1_s.png">
+								<source src="video/1.mp4" type="video/mp4">
+								Your browser doesn't support HTML5 video tag.
+							</video></div>
+						<div class="video_cont"><video muted loop   poster="images/rectangle1_s.png">
+								<source src="video/2.mp4" type="video/mp4">
+								Your browser doesn't support HTML5 video tag.
+							</video></div>
+						<div class="video_cont"><video muted loop   poster="images/rectangle1_s.png">
+								<source src="video/3.mp4" type="video/mp4">
+								Your browser doesn't support HTML5 video tag.
+							</video></div>
+						<div class="video_cont"><video muted loop   poster="images/rectangle1_s.png">
+								<source src="video/4.mp4" type="video/mp4">
+								Your browser doesn't support HTML5 video tag.
+							</video></div>
+						<div class="video_cont"><video muted loop   poster="images/rectangle1_s.png">
+								<source src="video/5.mp4" type="video/mp4">
+								Your browser doesn't support HTML5 video tag.
+							</video></div>
+						<div class="video_cont"><video muted loop   poster="images/rectangle1_s.png">
+								<source src="video/6.mp4" type="video/mp4">
+								Your browser doesn't support HTML5 video tag.
+							</video></div>
+						<div class="video_cont"><video muted loop   poster="images/rectangle1_s.png">
+								<source src="video/7.mp4" type="video/mp4">
+								Your browser doesn't support HTML5 video tag.
+							</video></div>
+						<div class="video_cont"><video muted loop   poster="images/rectangle1_s.png">
+								<source src="video/8.mp4" type="video/mp4">
+								Your browser doesn't support HTML5 video tag.
+							</video></div>
+					</div>
 				</div>
 			</div>
-		</div>
-	</section>
+		</section>
 		<footer>
 			<div class="container footer_main_con">
 				<div class="col-lg-6 col-md-6 col-sm-6 col-xs-12">
@@ -193,8 +231,8 @@ the player’s work ethic as well as the aesthetic of the facilities.</div>
 		/*LANDING BODY PAGES SLIDE*/
 
 		$(function() {
-			$('.content ul li').each((i,e)=>{
-				$(e).click(()=>{
+			$('.content ul li').each((i, e) => {
+				$(e).click(() => {
 					$('.content ul li').removeClass('active')
 					$(e).addClass('active')
 				})
@@ -247,7 +285,50 @@ the player’s work ethic as well as the aesthetic of the facilities.</div>
 			}); //
 		});
 	</script>
+	<script>
+		/*VIDEOS SLIDER*/
 
+		$(document).ready(function() {
+			$('.wrap_videos').slick({
+				dots: false,
+				infinite: true,
+				speed: 900,
+				slidesToShow: 5,
+				autoplay: false,
+				pauseOnHover: false,
+				slidesToScroll: 1,
+				arrows: false,
+				draggable: false,
+				// responsive: [
+				//
+				// 	{
+				// 		breakpoint: 1301,
+				// 		settings: {
+				// 			slidesToShow: 3
+				// 		}
+				// 	},
+				// 	{
+				// 		breakpoint: 992,
+				// 		settings: {
+				// 			slidesToShow: 2
+				// 		}
+				// 	},
+				// 	{
+				// 		breakpoint: 767,
+				// 		settings: {
+				// 			slidesToShow: 1
+				// 		}
+				// 	}
+				// ]
+			});
+			$(' .media .next').click(function() {
+				$(".wrap_videos").slick('slickNext');
+			}); // next button
+			$(' .media .prev').click(function() {
+				$(".wrap_videos").slick('slickPrev');
+			}); //
+		});
+	</script>
 </body>
 
 </html>
