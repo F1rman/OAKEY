@@ -67,11 +67,39 @@
 						</ul>
 					</div>
 					<div class="col">
-						<div class="text">Working with the Georgia State University Football Team provided us with an opportunity to put
+						<div index='0' class="text active">Working with the Georgia State University Football Team provided us with an opportunity to put
 							our strength in video alongside our passion for sports. GSU is a dynamic school, and we wanted
 							that dynamism to be showcased in the video materials we created. We developed an emotional
 							appeal to the content which was made a reality through beautiful camera shots that captured
 							the player’s work ethic as well as the aesthetic of the facilities.</div>
+
+						<div index='1' class="text">Georgia State acquired what was formerly known as ‘Turner Field’ to be used as the permanent
+							home of GSU Football beginning in 2017. With this, the GSU Athletics staff was in need of a wide
+							range of video content to help share the message with fans of GSU as well as more general
+							residents of Atlanta. The video produced was used in a variety of mediums, everything from
+							social media, to internal use, to fascia boards in the stadium as well as on the stadium
+							jumbotron. The content of the videos was also very diverse, including humorous instructional
+							videos, music driven hype videos, and an emotional tribute with the “Thank You Atlanta”
+							campaign video.</div>
+
+						<div index='2' class="text">One of the more unique features of the GSU project was the opportunity to create an original
+							music track to be used as the foundation for the hype video. Using GSU’s diversity as the
+							blueprint, we brought in musicians of different styles, all of which had some affiliation with GSU,
+							to create a song that reflected this diversity. The final track blended many musical genres to
+							produce a cool sound that established the vibe needed to build the hype video from. The video
+							was played on the stadium jumbotron during very home game and was also released on social
+							media and other web mediums.</div>
+
+						<div index='3' class="text">With a special excitement surrounding the 2017 season, it was important to capture the GSU
+							audience in as many ways as possible. One of the concepts that we envisioned was a gameday
+							website that would host all of the important information surrounding game day, as well as some
+							fun and innovative features for user experience. Thus, gsugameday.com was born.
+							<br>
+							<br>
+							We built a visual-centric site that was aesthetically pleasing and easy to navigate, as well as
+							responsive across all devices. Throughout the season, we provided weekly updates to reflect the
+							week’s upcoming matchup, giving the site a unique fluidity which kept it from becoming stale
+							for fans who continually use the site.</div>
 					</div>
 				</div>
 			</div>
@@ -91,43 +119,43 @@
 
 							<div class="before"></div>
 							<img class="poster" src="images/rectangle1_s.png" alt="">
-						<div class="hover"><img src="images/video-2.svg" alt="">Our city, Our time</div>
+							<div class="hover"><img src="images/video-2.svg" alt="">Our city, Our time</div>
 						</div>
 						<div class="video_cont ">
 
 							<div class="before"></div>
 							<img class="poster" src="images/rectangle2_s.png" alt="">
-						<div class="hover"><img src="images/video-2.svg" alt="">Our city, Our time</div>
+							<div class="hover"><img src="images/video-2.svg" alt="">Our city, Our time</div>
 						</div>
 						<div class="video_cont ">
 
 							<div class="before"></div>
 							<img class="poster" src="images/rectangle3_s.png" alt="">
-						<div class="hover"><img src="images/video-2.svg" alt="">Our city, Our time</div>
+							<div class="hover"><img src="images/video-2.svg" alt="">Our city, Our time</div>
 						</div>
 						<div class="video_cont ">
 
 							<div class="before"></div>
 							<img class="poster" src="images/rectangle4_s.png" alt="">
-						<div class="hover"><img src="images/video-2.svg" alt="">Our city, Our time</div>
+							<div class="hover"><img src="images/video-2.svg" alt="">Our city, Our time</div>
 						</div>
 						<div class="video_cont ">
 
 							<div class="before"></div>
 							<img class="poster" src="images/rectangle5_s.png" alt="">
-						<div class="hover"><img src="images/video-2.svg" alt="">Our city, Our time</div>
+							<div class="hover"><img src="images/video-2.svg" alt="">Our city, Our time</div>
 						</div>
 						<div class="video_cont ">
 
 							<div class="before"></div>
 							<img class="poster" src="images/rectangle2_s.png" alt="">
-						<div class="hover"><img src="images/video-2.svg" alt="">Our city, Our time</div>
+							<div class="hover"><img src="images/video-2.svg" alt="">Our city, Our time</div>
 						</div>
 						<div class="video_cont ">
 
 							<div class="before"></div>
 							<img class="poster" src="images/rectangle1_s.png" alt="">
-						<div class="hover"><img src="images/video-2.svg" alt="">Our city, Our time</div>
+							<div class="hover"><img src="images/video-2.svg" alt="">Our city, Our time</div>
 						</div>
 					</div>
 				</div>
@@ -245,6 +273,15 @@
 				$(e).click(() => {
 					$('.content ul li').removeClass('active')
 					$(e).addClass('active')
+					console.log($(e).index())
+					$('.text').removeClass('active')
+					$('.text').each((i2, e2) => {
+						if (Number($(e).index()) == Number($(e2).attr('index'))) {
+							$(e2).addClass('active')
+						}
+					})
+
+
 				})
 			})
 
@@ -348,79 +385,88 @@
 
 
 
-var arr_v = [vid1,vid2,vid3,vid4,vid5,vid6,vid1,vid2,vid3,vid4,vid5,vid6]
-$('.slider_media .video_cont').each((i,e)=>{
-	$(e).click(()=>{
-		console.log($(e).attr('data-slick-index'))
-		$('.slider_media .video_cont').removeClass('active')
-		$(e).addClass('active')
-	})
-	$(e).find('.before').click(()=>{
-		playVid(arr_v[$(e).attr('data-slick-index')])
-		openModal($(e).attr('data-slick-index'))
-	})
-})
-function openModal(index) {
-	console.log(index)
-	$('.popap_modal').addClass('active')
-}
-$('.popap_modal .close').click(()=>{
-	$('.popap_modal').removeClass('active')
-	pauseVid(vid1)
-	pauseVid(vid2)
-	pauseVid(vid3)
-	pauseVid(vid4)
-	pauseVid(vid5)
-	pauseVid(vid6)
-})
- function toggleVid(v) {
-	 console.log(v.paused)
-	 if (v.paused){
-	     v.play();
-		 }
-	   else{
-	     v.pause();
-	  }
- }
+			var arr_v = [vid1, vid2, vid3, vid4, vid5, vid6, vid1, vid2, vid3, vid4, vid5, vid6]
+			$('.slider_media .video_cont').each((i, e) => {
+				$(e).click(() => {
+					console.log($(e).attr('data-slick-index'))
+					$('.slider_media .video_cont').removeClass('active')
+					$(e).addClass('active')
+				})
+				$(e).find('.before').click(() => {
+					playVid(arr_v[$(e).attr('data-slick-index')])
+					openModal($(e).attr('data-slick-index'))
+				})
+			})
 
-function playVid(v) {
-	$('video').removeClass('active')
-  v.play();
-	$(v).addClass('active')
-}
+			function openModal(index) {
+				console.log(index)
+				$('.popap_modal').addClass('active')
+			}
+			$(document).click(function(e) {
+				var container = $(".popap_modal");
+				console.log()
+				// if the target of the click isn't the container nor a descendant of the container
+				if (!container.is(e.target) && container.has(e.target).length === 0 && !$(e.target).hasClass('before')) {
+					container.removeClass('active');
+				}
+			});
+			$('.popap_modal .close').click(() => {
+				$('.popap_modal').removeClass('active')
+				pauseVid(vid1)
+				pauseVid(vid2)
+				pauseVid(vid3)
+				pauseVid(vid4)
+				pauseVid(vid5)
+				pauseVid(vid6)
+			})
 
-function pauseVid(v) {
-	$('video').removeClass('active')
-  v.pause();
-}
+			function toggleVid(v) {
+				console.log(v.paused)
+				if (v.paused) {
+					v.play();
+				} else {
+					v.pause();
+				}
+			}
+
+			function playVid(v) {
+				$('video').removeClass('active')
+				v.play();
+				$(v).addClass('active')
+			}
+
+			function pauseVid(v) {
+				$('video').removeClass('active')
+				v.pause();
+			}
 		});
 	</script>
 	<div class="popap_modal">
-			<div class="close">X</div>
-			<video id="v1" muted loop poster="images/rectangle1_s.png">
-				<source src="video/1.mp4" type="video/mp4">
-				Your browser doesn't support HTML5 video tag.
-			</video>
-			<video id="v2" muted loop poster="images/rectangle2_s.png">
-				<source src="video/2.mp4" type="video/mp4">
-				Your browser doesn't support HTML5 video tag.
-			</video>
-			<video id="v3" muted loop poster="images/rectangle3_s.png">
-				<source src="video/3.mp4" type="video/mp4">
-				Your browser doesn't support HTML5 video tag.
-			</video>
-			<video id="v4" muted loop poster="images/rectangle4_s.png">
-				<source src="video/4.mp4" type="video/mp4">
-				Your browser doesn't support HTML5 video tag.
-			</video>
-			<video id="v5" muted loop poster="images/rectangle5_s.png">
-				<source src="video/5.mp4" type="video/mp4">
-				Your browser doesn't support HTML5 video tag.
-			</video>
-			<video id="v6" muted loop poster="images/rectangle1_s.png">
-				<source src="video/6.mp4" type="video/mp4">
-				Your browser doesn't support HTML5 video tag.
-			</video>
+		<!-- <div class="close">X</div> -->
+		<video id="v1" muted poster="images/rectangle1_s.png">
+			<source src="video/1.mp4" type="video/mp4">
+			Your browser doesn't support HTML5 video tag.
+		</video>
+		<video id="v2" muted poster="images/rectangle2_s.png">
+			<source src="video/2.mp4" type="video/mp4">
+			Your browser doesn't support HTML5 video tag.
+		</video>
+		<video id="v3" muted poster="images/rectangle3_s.png">
+			<source src="video/3.mp4" type="video/mp4">
+			Your browser doesn't support HTML5 video tag.
+		</video>
+		<video id="v4" muted poster="images/rectangle4_s.png">
+			<source src="video/4.mp4" type="video/mp4">
+			Your browser doesn't support HTML5 video tag.
+		</video>
+		<video id="v5" muted poster="images/rectangle5_s.png">
+			<source src="video/5.mp4" type="video/mp4">
+			Your browser doesn't support HTML5 video tag.
+		</video>
+		<video id="v6" muted poster="images/rectangle1_s.png">
+			<source src="video/6.mp4" type="video/mp4">
+			Your browser doesn't support HTML5 video tag.
+		</video>
 
 	</div>
 </body>

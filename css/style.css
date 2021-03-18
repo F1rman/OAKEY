@@ -1937,8 +1937,11 @@ display: flex;
 .content .row .col:last-child {
   width: 70%;
 }
-
+.text.active {
+display: block;
+}
 .text {
+  display: none;
   font-family: Poppins;
   font-size: 14px;
   font-weight: normal;
@@ -2077,7 +2080,7 @@ text-decoration: underline;
 .media .wrap_videos .video_cont::after{
   display: flex;
 position: absolute;
-width: 255px;
+width: calc(100% - 10px);
 content: '';
 height: 173px;
 background: #fffc;
