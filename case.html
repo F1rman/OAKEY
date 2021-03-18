@@ -1,0 +1,253 @@
+<!doctype html>
+<html lang="en-US">
+
+<head>
+
+	<meta charset="utf-8">
+	<meta http-equiv="X-UA-Compatible" content="IE=edge">
+	<meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+	<title>OAKEY | PORTFOLIO</title>
+
+	<link rel="icon" type="image/jpg" href="images/logo.svg">
+	<link href="css/bootstrap.css" rel="stylesheet" type="text/css">
+	<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.6.1/css/font-awesome.min.css">
+	<link href="fonts/site-fonts/fontstyle.css" rel="stylesheet" type="text/css">
+	<link href="css/style.css" rel="stylesheet" type="text/css">
+
+	<link rel="preconnect" href="https://fonts.gstatic.com">
+	<link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;600;800&display=swap" rel="stylesheet">
+
+	<!-- HTML5 Shim and Respond.js IE8 support of HTML5 elements and media queries -->
+	<!-- WARNING: Respond.js doesn't work if you view the page via file://-->
+	<!--[if lt IE 9]>
+  	<script src="https://oss.maxcdn.com/html5shiv/3.7.2/html5shiv.min.js"></script>
+  	<script src="https://oss.maxcdn.com/respond/1.4.2/respond.min.js"></script>
+  	<![endif]-->
+
+</head>
+
+<body data-spy="scroll" data-target="#spy">
+	<div class="home_page_wrapper portfolio_page_wrapper">
+
+		<section class="head_line">
+				<!-- <a href="portfolio.html" class="back_portfolio "><img src="images/close1.svg">Back to portfolio</a>
+			<a href="index.html" class="back_home back_portfolio">HOME<img src="images/home-icon.svg"></a> -->
+			<div class="portfolio_home_animation_btn_main_con home_btn">
+				<div class="portfolio_home_animation_btn_con ">
+					<a href="index.html"><button class="portfolio_home_hover-button">HOME</button><img src="images/home-icon.svg"></a>
+				</div>
+			</div>
+			<div class="portfolio_home_animation_btn_main_con portfolio_btn">
+				<div class="portfolio_home_animation_btn_con ">
+					<a href="portfolio.html"><img src="images/close1.svg"><button class="portfolio_home_hover-button">Back to portfolio</button></a>
+				</div>
+			</div>
+			<h1>Georgia State Athletics</h1>
+			<h2>Digital branding, Video Production, Media Campaign</h2>
+
+		</section>
+
+		<section>
+		<div class="content">
+			<div class="row">
+				<div class="col">
+					<ul>
+						<li class="active"><div class="after"></div>Overview</li>
+						<li><div class="after"></div>Diverse video</li>
+						<li><div class="after"></div>Original Music</li>
+						<li><div class="after"></div>Innovative Website</li>
+					</ul>
+				</div>
+				<div class="col">
+					<div class="text">Working with the Georgia State University Football Team provided us with an opportunity to put
+our strength in video alongside our passion for sports. GSU is a dynamic school, and we wanted
+that dynamism to be showcased in the video materials we created. We developed an emotional
+appeal to the content which was made a reality through beautiful camera shots that captured
+the player’s work ethic as well as the aesthetic of the facilities.</div>
+				</div>
+			</div>
+		</div>
+		</section>
+	<section>
+		<div class="media">
+			<h2>Media <div class="dot"></div></h2>
+			<div class="slider_media">
+				<div class="wrap_videos">
+					<div class="video_cont"><img src="images/rectangle1_s.png" alt=""></div>
+					<div class="video_cont"><img src="images/rectangle1_s.png" alt=""></div>
+					<div class="video_cont"><img src="images/rectangle1_s.png" alt=""></div>
+					<div class="video_cont"><img src="images/rectangle1_s.png" alt=""></div>
+					<div class="video_cont"><img src="images/rectangle1_s.png" alt=""></div>
+					<div class="video_cont"><img src="images/rectangle1_s.png" alt=""></div>
+					<div class="video_cont"><img src="images/rectangle1_s.png" alt=""></div>
+					<div class="video_cont"><img src="images/rectangle1_s.png" alt=""></div>
+				</div>
+			</div>
+		</div>
+	</section>
+		<footer>
+			<div class="container footer_main_con">
+				<div class="col-lg-6 col-md-6 col-sm-6 col-xs-12">
+					<ul>
+						<li><a href="#!"><img src="images/linkedin-1.svg"></a></li>
+						<li><a href="#!"><img src="images/mail.svg"></a></li>
+						<li><a href="#!"><img src="images/messenger-2.svg"></a></li>
+					</ul>
+				</div>
+				<div class="col-lg-6 col-md-6 col-sm-6 col-xs-12">
+					<h5>© 2020-2021 OAKEY AGENCY</h5>
+				</div>
+			</div>
+		</footer>
+
+	</div>
+
+
+	<script src="js/jquery-1.11.1.min.js"></script>
+	<script src="js/bootstrap.min.js"></script>
+	<script src="js/slick.min.js"></script>
+
+
+	<script type="text/javascript">
+		/*MOBILE VIEW MENU NAVBAR*/
+
+		$(document).ready(function() {
+			$(function() {
+				var header = $(".main_menubar");
+				$(window).scroll(function() {
+					var scroll = $(window).scrollTop();
+					if (scroll >= 1) {
+						header.addClass("active");
+					} else {
+						header.removeClass("active");
+					}
+				});
+			});
+			$('body').scrollspy({
+				target: '#spy',
+				offset: 80
+			});
+
+			$('.down_link').click(function(e) {
+				e.preventDefault();
+				var anchor = $(this);
+				$('html, body').stop().animate({
+					scrollTop: $(anchor.attr('href')).offset().top - 60
+				}, 600);
+			});
+			$('.push_link .close_push').click(function(e) {
+				e.preventDefault();
+				$('.push_install').slideUp(0);
+				$('.head_contents').addClass('push_none');
+			});
+			$('.view_full').click(function(e) {
+				e.preventDefault();
+				$('body').parent().addClass('active_web');
+			});
+			$(".proj-menu-toggle").click(function() {
+				$('.proj-menu-collapsed').toggleClass("proj-menu-expanded");
+			});
+			$('.mobile_menu li a[href*=#]:not([href=#])').click(function(e) {
+				e.preventDefault();
+				$('.proj-menu-collapsed').removeClass("proj-menu-expanded");
+				$('.mobile_menu li').removeClass('active');
+				$(this).parent().addClass('active');
+				var var_href = $(this).attr('href');
+				var anchor = $(this);
+
+			});
+			$('.tab_heads li a.last').click(function(e) {
+				e.preventDefault();
+				$('.tab_heads li a.first').trigger('click');
+			});
+			$('.tab_heads li a.comm').click(function(e) {
+				e.preventDefault();
+				$('.tab_heads li, .tab_content_in').removeClass('active');
+				$(this).parent().addClass('active');
+				var var_href = $(this).attr('href');
+				var var_link = $(this).data('link');
+				$(var_link).addClass('active');
+				var anchor = $(this);
+				$('html, body').stop().animate({
+					scrollTop: $(anchor.attr('href')).offset().top - 60
+				}, 600);
+			});
+		});
+	</script>
+
+
+	<script>
+		/*LANDING BODY PAGES SLIDE*/
+
+		$(function() {
+			$('a[href*=#]').on('click', function(e) {
+				e.preventDefault();
+				$('html, body').animate({
+					scrollTop: $($(this).attr('href')).offset().top
+				}, 600, 'linear');
+			});
+		});
+	</script>
+
+	<script>
+		/*LANDING BODY PAGES SLIDE*/
+
+		$(function() {
+			$('.content ul li').each((i,e)=>{
+				$(e).click(()=>{
+					$('.content ul li').removeClass('active')
+					$(e).addClass('active')
+				})
+			})
+
+		});
+	</script>
+	<script>
+		/*VIDEOS SLIDER*/
+
+		$(document).ready(function() {
+			$('.featured_products_slider').slick({
+				dots: false,
+				infinite: true,
+				speed: 900,
+				slidesToShow: 3,
+				center: true,
+				autoplay: false,
+				pauseOnHover: false,
+				slidesToScroll: 1,
+				arrows: false,
+				draggable: false,
+				responsive: [
+
+					{
+						breakpoint: 1301,
+						settings: {
+							slidesToShow: 3
+						}
+					},
+					{
+						breakpoint: 992,
+						settings: {
+							slidesToShow: 2
+						}
+					},
+					{
+						breakpoint: 767,
+						settings: {
+							slidesToShow: 1
+						}
+					}
+				]
+			});
+			$('#next').click(function() {
+				$(".featured_products_slider").slick('slickNext');
+			}); // next button
+			$('#prev').click(function() {
+				$(".featured_products_slider").slick('slickPrev');
+			}); //
+		});
+	</script>
+
+</body>
+
+</html>
