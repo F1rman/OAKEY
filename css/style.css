@@ -1904,6 +1904,8 @@ display: flex;
   white-space: nowrap;
   width: auto !important;
   text-transform: uppercase;
+  padding-left: 35px !important;
+margin-left: -35px !important;
 }
 
 .home_btn .portfolio_home_animation_btn_con, .portfolio_btn .portfolio_home_animation_btn_con {
@@ -2167,6 +2169,28 @@ footer.bl{
   display: block;
 
 }
+.f_p{
+  width: 100%;
+  position: fixed;
+  z-index: 120302;
+  height: 100%;
+  top: 0;
+  left: 0;
+  z-index: -120301;
+  background: #ffffffc2;
+  visibility: hidden;
+  opacity: 0;
+  transition: all .3s ease;
+  transform: translateY(100vh);
+}
+.f_p.active{
+  transform: translateY(0vh);
+  visibility: visible;
+  z-index: 120303;
+  transition: all .3s ease;
+  opacity: 1;
+}
+
 @media screen and (max-width: 600px) {
   .head_line h1{
     padding-top: 104px;

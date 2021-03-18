@@ -403,19 +403,22 @@
 			})
 
 			function openModal(index) {
-				console.log(index)
 				$('.popap_modal').addClass('active')
+				$('.f_p').addClass('active')
 			}
 			$(document).click(function(e) {
 				var container = $(".popap_modal");
+				var container2 = $(".f_p");
 				console.log()
 				// if the target of the click isn't the container nor a descendant of the container
 				if (!container.is(e.target) && container.has(e.target).length === 0 && !$(e.target).hasClass('before') && !$(e.target).hasClass('hover')) {
 					container.removeClass('active');
+					container2.removeClass('active');
 				}
 			});
 			$('.popap_modal .close').click(() => {
 				$('.popap_modal').removeClass('active')
+				$('.f_p').removeClass('active')
 				pauseVid(vid1)
 				pauseVid(vid2)
 				pauseVid(vid3)
@@ -445,6 +448,7 @@
 			}
 		});
 	</script>
+	<div class="f_p"></div>
 	<div class="popap_modal">
 		<!-- <div class="close">X</div> -->
 		<video id="v1" muted poster="images/rectangle1_s.png">
