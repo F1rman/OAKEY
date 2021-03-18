@@ -56,10 +56,10 @@
 								<div class="after"></div>Overview
 							</li>
 							<li>
-								<div class="after"></div>Diverse video
+								<div class="after"></div>DIVERSE VIDEO
 							</li>
 							<li>
-								<div class="after"></div>Original Music
+								<div class="after"></div>ORIGINAL MUSIC
 							</li>
 							<li>
 								<div class="after"></div>Innovative Website
@@ -340,17 +340,39 @@
 
 
 			var vid1 = document.getElementById("v1");
+			var vid2 = document.getElementById("v2");
+			var vid3 = document.getElementById("v3");
+			var vid4 = document.getElementById("v4");
+			var vid5 = document.getElementById("v5");
+			var vid6 = document.getElementById("v6");
 
+
+
+var arr_v = [vid1,vid2,vid3,vid4,vid5,vid6,vid1,vid2,vid3,vid4,vid5,vid6]
 $('.slider_media .video_cont').each((i,e)=>{
 	$(e).click(()=>{
-		console.log($(e).parent().find('.before'))
-		console.log($(e).parent().index())
+		console.log($(e).attr('data-slick-index'))
 		$('.slider_media .video_cont').removeClass('active')
 		$(e).addClass('active')
 	})
+	$(e).find('.before').click(()=>{
+		playVid(arr_v[$(e).attr('data-slick-index')])
+		openModal($(e).attr('data-slick-index'))
+	})
 })
-
-
+function openModal(index) {
+	console.log(index)
+	$('.popap_modal').addClass('active')
+}
+$('.popap_modal .close').click(()=>{
+	$('.popap_modal').removeClass('active')
+	pauseVid(vid1)
+	pauseVid(vid2)
+	pauseVid(vid3)
+	pauseVid(vid4)
+	pauseVid(vid5)
+	pauseVid(vid6)
+})
  function toggleVid(v) {
 	 console.log(v.paused)
 	 if (v.paused){
@@ -362,21 +384,43 @@ $('.slider_media .video_cont').each((i,e)=>{
  }
 
 function playVid(v) {
+	$('video').removeClass('active')
   v.play();
+	$(v).addClass('active')
 }
 
 function pauseVid(v) {
+	$('video').removeClass('active')
   v.pause();
 }
 		});
 	</script>
 	<div class="popap_modal">
-	  <div class="popap container">
-			<video id="v2" muted loop  controls  poster="images/rectangle1_s.png">
+			<div class="close">X</div>
+			<video id="v1" muted loop poster="images/rectangle1_s.png">
+				<source src="video/1.mp4" type="video/mp4">
+				Your browser doesn't support HTML5 video tag.
+			</video>
+			<video id="v2" muted loop poster="images/rectangle2_s.png">
 				<source src="video/2.mp4" type="video/mp4">
 				Your browser doesn't support HTML5 video tag.
 			</video>
-	  </div>
+			<video id="v3" muted loop poster="images/rectangle3_s.png">
+				<source src="video/3.mp4" type="video/mp4">
+				Your browser doesn't support HTML5 video tag.
+			</video>
+			<video id="v4" muted loop poster="images/rectangle4_s.png">
+				<source src="video/4.mp4" type="video/mp4">
+				Your browser doesn't support HTML5 video tag.
+			</video>
+			<video id="v5" muted loop poster="images/rectangle5_s.png">
+				<source src="video/5.mp4" type="video/mp4">
+				Your browser doesn't support HTML5 video tag.
+			</video>
+			<video id="v6" muted loop poster="images/rectangle1_s.png">
+				<source src="video/6.mp4" type="video/mp4">
+				Your browser doesn't support HTML5 video tag.
+			</video>
 
 	</div>
 </body>
