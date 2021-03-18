@@ -2127,7 +2127,11 @@ display: none;
 .media .btn_wrap .btn_a {
   cursor: pointer;
 }
-
+.media .btn_wrap .btn_a.slick-disabled {
+  opacity: 0.4;
+  pointer-events: none;
+  cursor: auto;
+}
 .media .btn_wrap .btn_a.prev {
   transform: rotate(180deg);
   margin-right: 4px;

@@ -110,7 +110,7 @@
 				</h2>
 				<div class="slider_media">
 					<div class="btn_wrap">
-						<div class="prev btn_a"><img src="images/right1.svg" alt=""></div>
+						<div class="prev btn_a 	"><img src="images/right1.svg" alt=""></div>
 						<div class="next btn_a"><img src="images/right1.svg" alt=""></div>
 					</div>
 
@@ -344,8 +344,10 @@
 				autoplay: false,
 				pauseOnHover: false,
 				slidesToScroll: 1,
-				arrows: false,
+				arrows: true,
 				draggable: false,
+				prevArrow:$('.btn_wrap .prev'),
+				nextArrow:$('.btn_wrap .next'),
 				// responsive: [
 				//
 				// 	{
@@ -368,12 +370,12 @@
 				// 	}
 				// ]
 			});
-			$(' .media .next').click(function() {
-				$(".wrap_videos").slick('slickNext');
-			}); // next button
-			$(' .media .prev').click(function() {
-				$(".wrap_videos").slick('slickPrev');
-			}); //
+			// $(' .media .next').click(function() {
+			// 	$(".wrap_videos").slick('slickNext');
+			// }); // next button
+			// $(' .media .prev').click(function() {
+			// 	$(".wrap_videos").slick('slickPrev');
+			// }); //
 
 
 			var vid1 = document.getElementById("v1");
@@ -447,6 +449,8 @@
 				v.pause();
 			}
 		});
+
+
 	</script>
 	<div class="f_p"></div>
 	<div class="popap_modal">
