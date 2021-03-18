@@ -338,7 +338,7 @@
 		$(document).ready(function() {
 			$('.wrap_videos').slick({
 				dots: false,
-				infinite: true,
+				infinite: false,
 				speed: 900,
 				slidesToShow: 5,
 				autoplay: false,
@@ -396,6 +396,10 @@
 					playVid(arr_v[$(e).attr('data-slick-index')])
 					openModal($(e).attr('data-slick-index'))
 				})
+				$(e).find('.hover').click(() => {
+					playVid(arr_v[$(e).attr('data-slick-index')])
+					openModal($(e).attr('data-slick-index'))
+				})
 			})
 
 			function openModal(index) {
@@ -406,7 +410,7 @@
 				var container = $(".popap_modal");
 				console.log()
 				// if the target of the click isn't the container nor a descendant of the container
-				if (!container.is(e.target) && container.has(e.target).length === 0 && !$(e.target).hasClass('before')) {
+				if (!container.is(e.target) && container.has(e.target).length === 0 && !$(e.target).hasClass('before') && !$(e.target).hasClass('hover')) {
 					container.removeClass('active');
 				}
 			});
