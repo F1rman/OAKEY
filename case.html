@@ -78,7 +78,7 @@
 		</section>
 		<section>
 			<div class="media">
-				<h2>Media <div class="dot"></div>
+				<h2><span>Media</span> <span class="dot"></span>
 				</h2>
 				<div class="slider_media">
 					<div class="btn_wrap">
@@ -87,53 +87,63 @@
 					</div>
 
 					<div class="wrap_videos">
-						<div class="video_cont"><video controls muted loop  preload="" poster="images/rectangle1_s.png">
-								<source src="video/1.mp4" type="video/mp4">
-								Your browser doesn't support HTML5 video tag.
-							</video></div>
-						<div class="video_cont"><video muted loop   poster="images/rectangle1_s.png">
-								<source src="video/2.mp4" type="video/mp4">
-								Your browser doesn't support HTML5 video tag.
-							</video></div>
-						<div class="video_cont"><video muted loop   poster="images/rectangle1_s.png">
-								<source src="video/3.mp4" type="video/mp4">
-								Your browser doesn't support HTML5 video tag.
-							</video></div>
-						<div class="video_cont"><video muted loop   poster="images/rectangle1_s.png">
-								<source src="video/4.mp4" type="video/mp4">
-								Your browser doesn't support HTML5 video tag.
-							</video></div>
-						<div class="video_cont"><video muted loop   poster="images/rectangle1_s.png">
-								<source src="video/5.mp4" type="video/mp4">
-								Your browser doesn't support HTML5 video tag.
-							</video></div>
-						<div class="video_cont"><video muted loop   poster="images/rectangle1_s.png">
-								<source src="video/6.mp4" type="video/mp4">
-								Your browser doesn't support HTML5 video tag.
-							</video></div>
-						<div class="video_cont"><video muted loop   poster="images/rectangle1_s.png">
-								<source src="video/7.mp4" type="video/mp4">
-								Your browser doesn't support HTML5 video tag.
-							</video></div>
-						<div class="video_cont"><video muted loop   poster="images/rectangle1_s.png">
-								<source src="video/8.mp4" type="video/mp4">
-								Your browser doesn't support HTML5 video tag.
-							</video></div>
+						<div class="video_cont active">
+
+							<div class="before"></div>
+							<img class="poster" src="images/rectangle1_s.png" alt="">
+						<div class="hover"><img src="images/video-2.svg" alt="">Our city, Our time</div>
+						</div>
+						<div class="video_cont ">
+
+							<div class="before"></div>
+							<img class="poster" src="images/rectangle2_s.png" alt="">
+						<div class="hover"><img src="images/video-2.svg" alt="">Our city, Our time</div>
+						</div>
+						<div class="video_cont ">
+
+							<div class="before"></div>
+							<img class="poster" src="images/rectangle3_s.png" alt="">
+						<div class="hover"><img src="images/video-2.svg" alt="">Our city, Our time</div>
+						</div>
+						<div class="video_cont ">
+
+							<div class="before"></div>
+							<img class="poster" src="images/rectangle4_s.png" alt="">
+						<div class="hover"><img src="images/video-2.svg" alt="">Our city, Our time</div>
+						</div>
+						<div class="video_cont ">
+
+							<div class="before"></div>
+							<img class="poster" src="images/rectangle5_s.png" alt="">
+						<div class="hover"><img src="images/video-2.svg" alt="">Our city, Our time</div>
+						</div>
+						<div class="video_cont ">
+
+							<div class="before"></div>
+							<img class="poster" src="images/rectangle2_s.png" alt="">
+						<div class="hover"><img src="images/video-2.svg" alt="">Our city, Our time</div>
+						</div>
+						<div class="video_cont ">
+
+							<div class="before"></div>
+							<img class="poster" src="images/rectangle1_s.png" alt="">
+						<div class="hover"><img src="images/video-2.svg" alt="">Our city, Our time</div>
+						</div>
 					</div>
 				</div>
 			</div>
 		</section>
-		<footer>
+		<footer class="bl">
 			<div class="container footer_main_con">
 				<div class="col-lg-6 col-md-6 col-sm-6 col-xs-12">
 					<ul>
-						<li><a href="#!"><img src="images/linkedin-1.svg"></a></li>
-						<li><a href="#!"><img src="images/mail.svg"></a></li>
-						<li><a href="#!"><img src="images/messenger-2.svg"></a></li>
+						<li><a href="#!"><img src="images/linkedin-1_bl.svg"></a></li>
+						<li><a href="#!"><img src="images/mail_bl.svg"></a></li>
+						<li><a href="#!"><img src="images/messenger-2_bl.svg"></a></li>
 					</ul>
 				</div>
-				<div class="col-lg-6 col-md-6 col-sm-6 col-xs-12">
-					<h5>© 2020-2021 OAKEY AGENCY</h5>
+				<div class="col-lg-6 col-md-6 col-sm-6 col-xs-12 bl">
+					<h5 style="color:#121212; margin:0;">© 2020-2021 OAKEY AGENCY</h5>
 				</div>
 			</div>
 		</footer>
@@ -327,8 +337,48 @@
 			$(' .media .prev').click(function() {
 				$(".wrap_videos").slick('slickPrev');
 			}); //
+
+
+			var vid1 = document.getElementById("v1");
+
+$('.slider_media .video_cont').each((i,e)=>{
+	$(e).click(()=>{
+		console.log($(e).parent().find('.before'))
+		console.log($(e).parent().index())
+		$('.slider_media .video_cont').removeClass('active')
+		$(e).addClass('active')
+	})
+})
+
+
+ function toggleVid(v) {
+	 console.log(v.paused)
+	 if (v.paused){
+	     v.play();
+		 }
+	   else{
+	     v.pause();
+	  }
+ }
+
+function playVid(v) {
+  v.play();
+}
+
+function pauseVid(v) {
+  v.pause();
+}
 		});
 	</script>
+	<div class="popap_modal">
+	  <div class="popap container">
+			<video id="v2" muted loop  controls  poster="images/rectangle1_s.png">
+				<source src="video/2.mp4" type="video/mp4">
+				Your browser doesn't support HTML5 video tag.
+			</video>
+	  </div>
+
+	</div>
 </body>
 
 </html>
